@@ -16,8 +16,9 @@ const parseCommand = (client, message) => {
       message.channel.send('pong');
       break;
     }
-    default:
-    // do nothing
+    default: {
+      message.channel.send('Help stuff here');
+    }
   }
 };
 
