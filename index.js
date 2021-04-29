@@ -1,7 +1,7 @@
 require('dotenv').config();
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client } = require('discord.js');
+const client = new Client();
 
 const { prefix } = require('./config/bot');
 const commands = require('./commands');
