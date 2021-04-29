@@ -1,29 +1,31 @@
+const parser = require('yargs-parser');
 const { prefix } = require('../config/bot');
-const start = require('./start');
-const help = require('./help');
+
+const commands = {
+  start: require('./start'),
+  help: require('./help'),
+  ping: (client, message, options) => message.channel.send('pong'),
+};
 
 const parseCommand = (client, message) => {
+  // break up body and find the command name called
   const body = message.content.slice(prefix.length);
   const params = body.split(' ');
-  const command = params.shift().toLowerCase();
+  const commandName = params.shift().toLowerCase();
 
-  console.log(command, params);
-  switch (command) {
-    case 'start': {
-      start(client, message, ...params);
-      break;
-    }
-    case 'ping': {
-      message.channel.send('pong');
-      break;
-    }
-    case 'help': {
-      help(client, message, ...prarams);
-      break;
-    }
-    default: {
-      // do nothing
-    }
+  // check if command exists
+  const command = commands[commandName];
+  if (!command) return;
+
+  // parse the options with `yargs-parser`
+  const options = parser(params);
+
+  // call the command
+  try {
+    command(client, message, options);
+  } catch (e) {
+    // something wrong, this stops the command crashing the app
+    console.error(e);
   }
 };
 
