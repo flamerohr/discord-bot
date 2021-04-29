@@ -1,5 +1,6 @@
 const { prefix } = require('../config/bot');
 const start = require('./start');
+const help = require('./help');
 
 const parseCommand = (client, message) => {
   const body = message.content.slice(prefix.length);
@@ -16,8 +17,12 @@ const parseCommand = (client, message) => {
       message.channel.send('pong');
       break;
     }
+    case 'help': {
+      help(client, message, ...prarams);
+      break;
+    }
     default: {
-      message.channel.send('Help stuff here');
+      // do nothing
     }
   }
 };
