@@ -32,3 +32,6 @@ https://www.howtogeek.com/364225/how-to-make-your-own-discord-bot/
 
 Shows setting up and how to get things started with commands
 https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js
+
+Discord API docs
+https://discord.js.org/#/docs/main/stable/examples/ping
