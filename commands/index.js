@@ -3,6 +3,7 @@ const { prefix } = require('../config/bot');
 
 const commands = {
   start: require('./start'),
+  room: require('./room'),
   help: require('./help'),
   ping: (client, message, options) => message.channel.send('pong'),
 };
