@@ -7,5 +7,6 @@ module.exports = (client, message) => {
     - \`start\`
     - \`help\`
     - \`ping\`
+    - \`room\`
   `);
 };
