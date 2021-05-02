@@ -11,8 +11,17 @@ Copy `.env.template` and name it `.env`, replace the relevant data in there with
 Invite your bot to a server with this link, replace `${DISCORD_CLIENT_ID}` with what is in your `.env` file:
 
 ```text
-https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&permissions=18496&scope=bot
+https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&permissions=26688&scope=bot
 ```
+
+> Developer Tip 💡
+>
+> The url has `permissions=26688`, which means it asks for the below permissions for the bot:
+>
+> - Send Messages
+> - Manage Messages
+> - Embed Links
+> - Add Reactions
 
 Run the following commands in this project:
 
