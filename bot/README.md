@@ -42,3 +42,23 @@ Shows setting up and how to get things started with commands
 
 Discord API docs
 <https://discord.js.org/#/docs/main/stable/examples/ping>
+
+## Running docker image
+
+In some cases, I'd need to run the server inside docker rather than my own image, so it is helpful to utilise the `Dockerfile` defined here.
+
+To build the image:
+```
+docker build -t discord-bot .
+```
+
+To run the server inside the image:
+```
+docker run -v $PWD:/usr/node discord-bot start
+```
+
+You can use any other `npm` commands with the format above, for example to install `express`:
+```
+docker run -v $PWD:/usr/node discord-bot install express
+```
+
