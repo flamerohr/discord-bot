@@ -54,11 +54,10 @@ docker build -t discord-bot .
 
 To run the server inside the image:
 ```
-docker run -v $PWD:/usr/node discord-bot start
+docker run -v $PWD:/usr/node discord-bot run start
 ```
 
 You can use any other `npm` commands with the format above, for example to install `express`:
 ```
 docker run -v $PWD:/usr/node discord-bot install express
 ```
-
