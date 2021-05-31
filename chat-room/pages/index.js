@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <p>
-      Hello From my next.js app!
+      Hello YOGA DELT!
     </p>
   )
 }
