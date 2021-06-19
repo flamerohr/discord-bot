@@ -1,0 +1,28 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "A co-op bot that sets up chat rooms for players of the `Guardian Tales` game to chat and arrange co-op matches.",
+  "scripts": {
+    "start": "npm-run-all --parallel start:*",
+    "start:bot": "cd bot && npm start",
+    "start:chat-room": "cd chat-room && npm start",
+    "start:chat-room-socketio-server": "cd chat-room-socketio-server && npm start",
+    "install": "npm-run-all install:*",
+    "install:bot": "cd bot && npm install",
+    "install:chat-room": "cd chat-room && npm install",
+    "install:chat-room-socketio-server": "cd chat-room-socketio-server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flamerohr/discord-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flamerohr/discord-bot/issues"
+  },
+  "homepage": "https://github.com/flamerohr/discord-bot#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
