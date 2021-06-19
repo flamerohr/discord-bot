@@ -48,16 +48,19 @@ Discord API docs
 In some cases, I'd need to run the server inside docker rather than my own image, so it is helpful to utilise the `Dockerfile` defined here.
 
 To build the image:
-```
+
+```bash
 docker build -t discord-bot .
 ```
 
 To run the server inside the image:
-```
+
+```bash
 docker run -v $PWD:/usr/node discord-bot run start
 ```
 
 You can use any other `npm` commands with the format above, for example to install `express`:
-```
+
+```bash
 docker run -v $PWD:/usr/node discord-bot install express
 ```
