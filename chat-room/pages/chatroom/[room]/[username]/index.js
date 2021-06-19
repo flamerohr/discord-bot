@@ -52,7 +52,7 @@ const ChatRoom = () => {
 
     socket.on('notification', handler)
     return () => {
-      socket.off('message', handler)
+      socket.off('notification', handler)
     }
   })
 
