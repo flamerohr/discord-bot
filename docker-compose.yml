@@ -6,7 +6,7 @@ services:
       build: ./bot
       command: run start
       volumes:
-        - .:/usr/node
+        - ./bot:/usr/node
 
     chatroom:
       build: ./chat-room
@@ -14,7 +14,7 @@ services:
       ports:
         - "3000:3000"
       volumes:
-        - .:/usr/node
+        - ./chat-room:/usr/node
 
     chatroomsocketioserver:
       build: ./chat-room-socketio-server
@@ -22,4 +22,4 @@ services:
       ports:
         - "8000:8000"
       volumes:
-        - .:/usr/node
+        - ./chat-room-socketio-server:/usr/node
