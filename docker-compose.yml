@@ -13,9 +13,13 @@ services:
       command: run start
       ports:
         - "3000:3000"
+      volumes:
+        - .:/usr/node
 
     chatroomsocketioserver:
       build: ./chat-room-socketio-server
       command: run start
       ports:
         - "8000:8000"
+      volumes:
+        - .:/usr/node
