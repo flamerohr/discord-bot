@@ -19,3 +19,25 @@ The static website that allow users to join a room via a URL.
    ```
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Running docker image
+
+In some cases, I'd need to run the server inside docker rather than my own image, so it is helpful to utilise the `Dockerfile` defined here.
+
+To build the image:
+
+```bash
+docker build -t chat-room .
+```
+
+To run the server inside the image:
+
+```bash
+docker run -v "$(PWD):/usr/node" -p 3000:3000 chat-room run start
+```
+
+You can use any other `npm` commands with the format above, for example to install `express`:
+
+```bash
+docker run -v "$(PWD):/usr/node" chat-room install express
+```
