@@ -14,6 +14,8 @@ Project Name | Description
 
 ## Getting Started
 
+### Via NPM Scripts
+
 Set up the Discord bot project's `.env` file. For more information, see [Bot - Getting Started](./bot/README.md#getting-started)
 
 1. Open up the terminal, and navigate to the root of the repository.
@@ -29,4 +31,14 @@ Set up the Discord bot project's `.env` file. For more information, see [Bot - G
 
    ```bash
    npm start
+   ```
+
+### Via `docker-compose`
+
+1. Open up the terminal, and navigate to the root of the repository.
+
+2. Run the below command to build & run all projects:
+
+   ```bash
+   docker-compose up -d
    ```
