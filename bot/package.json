@@ -13,7 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "heroku-postbuild": "npm install"
   },
   "author": "Chris <flamer.ohr@gmail.com>",
   "license": "MIT"
