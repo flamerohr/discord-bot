@@ -7,7 +7,7 @@
     "start:bot": "cd bot && npm start",
     "start:chat-room": "cd chat-room && npm start",
     "start:chat-room-socketio-server": "cd chat-room-socketio-server && npm start",
-    "install": "npm-run-all install:*",
+    "postinstall": "npm-run-all install:*",
     "install:bot": "cd bot && npm install",
     "install:chat-room": "cd chat-room && npm install",
     "install:chat-room-socketio-server": "cd chat-room-socketio-server && npm install"
