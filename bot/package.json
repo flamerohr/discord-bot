@@ -12,8 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon",
-    "heroku-postbuild": "npm install"
+    "start": "nodemon"
   },
   "author": "Chris <flamer.ohr@gmail.com>",
   "license": "MIT"
