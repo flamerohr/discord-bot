@@ -1,1 +1,1 @@
-web: cd chat-room && npm start
+web: npm start

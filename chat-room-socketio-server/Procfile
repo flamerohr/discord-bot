@@ -1,1 +1,1 @@
-web: cd chat-room-socketio-server && npm start
+web: npm start
