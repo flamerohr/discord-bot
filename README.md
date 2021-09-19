@@ -1,44 +1,36 @@
-# Discord bot
+# Co-op Bot
 
 A co-op bot that sets up chat rooms for players of the `Guardian Tales` game to chat and arrange co-op matches.
 
-## Projects
+## Getting started
 
-This repository has multiple projects.
+Setup a discord application/bot by following Step 1 [here](https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js).
 
-Project Name | Description
---- | ---
-[bot](./bot/README.md) | The project for the Discord bot. The bot coordinates players to join chat rooms for co-op, via a link.
-[chat-room](./chat-room/README.md) | The chat room service static website which the bot links to, for players to set up co-op.
-[chat-room-socketio-server](./chat-room-socketio-server/README.md) | The socket.io server which enables real-time functionality for the `chat-room` application.
+Copy `.env.template` and name it `.env`, replace the relevant data in there with your application credentials.
 
-## Getting Started
+Invite your bot to a server with this link, replace `${DISCORD_CLIENT_ID}` with the client ID (AKA Application ID), which can be obtained when you created your discord application.
 
-### Via NPM Scripts
+```text
+https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&permissions=2048&scope=bot%20applications.commands
 
-Set up the Discord bot project's `.env` file. For more information, see [Bot - Getting Started](./bot/README.md#getting-started)
+https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&permissions=292057778176&scope=bot%20applications.commands
+```
 
-1. Open up the terminal, and navigate to the root of the repository.
+> Developer Tip 💡
+>
+> The url has `permissions=292057778176`, which means it asks for the below permissions for the bot:
+>
+> - Send Messages
+> - Send Messages in Threads
+> - Manage Threads
 
-2. Run the below command to install all project dependencies:
+Run the following commands in this project:
 
-   ```bash
-   npm install
-   npm run install
-   ```
+```bash
+npm install
+npm start
+```
 
-3. Run the below command to run all projects:
+Use the bot by typing in `/`, and then clicking on the bot to see what commands are available.
 
-   ```bash
-   npm start
-   ```
-
-### Via `docker-compose`
-
-1. Open up the terminal, and navigate to the root of the repository.
-
-2. Run the below command to build & run all projects:
-
-   ```bash
-   docker-compose up -d
-   ```
+![Demonstration](./Demonstration.jpg)
