@@ -16,6 +16,10 @@ module.exports = {
     description: 'The maximum number of members for your party.' + (defaultMaxMembersInParty ? ` Default is ${defaultMaxMembersInParty}.` : '')
   }],
   executeAsync: async (interaction) => {
+    if (interaction.channel.isThread()) {
+      await interaction.reply({content: `You can't create a party inside a thread!`, ephemeral: true});
+      return;
+    }
     const maximumMembers = interaction.options.get('maximum_members')?.value ?? defaultMaxMembersInParty;
     if (maximumMembers && maximumMembers < minimumMembersInParty) {
       await interaction.reply({content: `Maximum party size must be ${minimumMembersInParty} or more!`, ephemeral: true});
@@ -101,7 +105,7 @@ module.exports = {
         // This means the button wasn't clicked on time
         if (err.code === 'INTERACTION_COLLECTOR_ERROR') {
           if (!interactionReplyMessage.deleted)
-            await interactionReplyMessage.edit({ 
+            await interactionReplyMessage.edit({
               content: 'There has been a long period of inactivity. The party request has expired.',
               components: []
             });
