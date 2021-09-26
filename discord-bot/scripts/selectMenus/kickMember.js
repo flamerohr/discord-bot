@@ -14,7 +14,6 @@ const handler = async (context) => {
     return;
   }
 
-  // const memberToKick = componentInteraction.options.get('maximum_members')?.value ?? defaultMaxMembersInParty;
   const userIdToKick = componentInteraction.values[0];
   const userToKick = members.find(m => m.id === userIdToKick);
   if (!userToKick) {
