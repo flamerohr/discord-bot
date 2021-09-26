@@ -6,6 +6,7 @@ const joinPartyButton = require('../scripts/buttons/joinParty');
 const leavePartyButton = require('../scripts/buttons/leaveParty');
 const createRoomButton = require('../scripts/buttons/createRoom');
 const disbandPartyButton = require('../scripts/buttons/disbandParty');
+const kickMemberButton = require('../scripts/buttons/kickMember');
 
 module.exports = {
   name: 'create-room',
@@ -35,7 +36,7 @@ module.exports = {
         new MessageButton()
           .setCustomId(leavePartyButton.id(interaction))
           .setLabel('👋 Leave Party')
-          .setStyle('DANGER'),
+          .setStyle('SECONDARY'),
         new MessageButton()
           .setCustomId(createRoomButton.id(interaction))
           .setLabel('🛖 Create Room')
@@ -43,6 +44,10 @@ module.exports = {
         new MessageButton()
           .setCustomId(disbandPartyButton.id(interaction))
           .setLabel('💔 Disband Party')
+          .setStyle('DANGER'),
+        new MessageButton()
+          .setCustomId(kickMemberButton.id(interaction))
+          .setLabel('🥾 Kick Member')
           .setStyle('DANGER'),
       );
 
@@ -74,7 +79,8 @@ module.exports = {
       joinPartyButton.filter(createFilterParams(componentInteraction))
       || leavePartyButton.filter(createFilterParams(componentInteraction))
       || createRoomButton.filter(createFilterParams(componentInteraction))
-      || disbandPartyButton.filter(createFilterParams(componentInteraction));
+      || disbandPartyButton.filter(createFilterParams(componentInteraction))
+      || kickMemberButton.filter(createFilterParams(componentInteraction));
 
     // Handle when the user clicks on the button.
     while(!partyState.disbanded) {
@@ -99,6 +105,9 @@ module.exports = {
             break;
           case disbandPartyButton.id(interaction):
             await disbandPartyButton.handler(context);
+            break;
+          case kickMemberButton.id(interaction):
+            await kickMemberButton.handler(context);
             break;
         }
       } catch (err) {
