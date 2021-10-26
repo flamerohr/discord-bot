@@ -1,1 +1,1 @@
-worker: cd discord-bot && npm start
+worker: npm start
