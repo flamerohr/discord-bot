@@ -11,8 +11,6 @@ Copy `.env.template` and name it `.env`, replace the relevant data in there with
 Invite your bot to a server with this link, replace `${DISCORD_CLIENT_ID}` with the client ID (AKA Application ID), which can be obtained when you created your discord application.
 
 ```text
-https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&permissions=2048&scope=bot%20applications.commands
-
 https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&permissions=292057778176&scope=bot%20applications.commands
 ```
 
